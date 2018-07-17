@@ -1,0 +1,32 @@
+package constructors;
+
+public class Constructor {
+	
+	int i;
+	
+	public Constructor(){
+		this(20);
+		System.out.println("Default constructor");
+	}
+
+	public Constructor(int i)
+	{
+		this.i=i;
+		System.out.println(i);
+		System.out.println("Parametereed constructor");
+	}
+	
+	
+	public static void string(){
+		
+		String s1="hfjrjdkr";
+		boolean s=s1.endsWith("jdkr");
+		System.out.println(s);
+	}
+	
+	public static void main(String[] args) {
+		
+		Constructor c1=new Constructor();
+		string();
+	}
+}

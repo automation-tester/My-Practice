@@ -1,0 +1,22 @@
+package inheritence;
+
+public class ClassB extends ClassA{
+	
+  public void test(){
+		
+		System.out.println("Sub class common method");
+	}
+	
+	public void sub(){
+		System.out.println("Sub class separate method");
+	}
+	
+	public static void main(String[] args) {
+		
+		ClassA obj=new ClassB();
+		obj.test();
+		obj.add();
+		
+	}
+
+}

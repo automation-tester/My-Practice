@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="5733" started-at="2018-04-16T10:33:32Z" finished-at="2018-04-16T10:33:38Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="5733" started-at="2018-04-16T10:33:32Z" finished-at="2018-04-16T10:33:38Z">
+      <class name="appium.appiumAutomation.HybridApp">
+        <test-method status="PASS" signature="n()[pri:0, instance:appium.appiumAutomation.HybridApp@a3ffec]" name="n" duration-ms="5712" started-at="2018-04-16T16:03:32Z" finished-at="2018-04-16T16:03:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- n -->
+      </class> <!-- appium.appiumAutomation.HybridApp -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

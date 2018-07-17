@@ -1,0 +1,9 @@
+Feature: Gmail login page with tags and hooks
+
+  @smoke @regression
+  Scenario Outline: user checks the login page functionality using scenario outline # TagsAndHooks.feature:4
+    Then user enters "<username>"
+    And clicks on next link
+    Then user enters "<password>" password
+
+    Examples: 

@@ -1,0 +1,13 @@
+package encapsulation;
+
+public class ClassEncapsulation {
+	
+	// encapsulation can be achived by declaring the variable or member as private
+	
+	private String name;
+	
+	
+	
+	
+
+}

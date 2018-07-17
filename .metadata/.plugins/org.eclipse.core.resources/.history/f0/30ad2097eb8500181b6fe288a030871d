@@ -1,0 +1,13 @@
+package inheritence;
+
+public abstract class PartialClass {
+	
+	String ka;
+	String s1;
+	
+	public PartialClass(String ka, String s1) {
+		
+		
+	}
+
+}

@@ -1,0 +1,10 @@
+package inheritence;
+
+public interface First {
+	String ka="";
+    int i=2;
+	void method1();
+	
+	void method2();
+	
+}

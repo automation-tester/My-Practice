@@ -1,0 +1,18 @@
+package com.cucumber.base;
+
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+
+public class BaseClass {
+	
+	@BeforeClass
+	public void cleanUp(){
+		System.out.println("Cleaning the proxy");
+	}
+	
+	@AfterClass
+	public void uponFailure(){
+		
+	}
+
+}

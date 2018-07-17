@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="sample test at class level"> 
+    <test name="smoke test">
+    <classes>
+      <class  name="annotaions.Annotations2"/>  
+      <class  name="annotaions.Annotations"/>  
+    </classes> 
+    </test> 
+</suite>
+

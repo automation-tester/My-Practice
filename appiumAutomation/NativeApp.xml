@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Native App Suite">
+  <test name="Native apps Test">
+    <classes>
+      <class name="appium.appiumAutomation.NativeApp" />
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

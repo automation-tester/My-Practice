@@ -1,0 +1,21 @@
+package constructors;
+
+public class Constructor {
+	
+	int i;
+	
+	public Constructor(){
+		this(20);
+		System.out.println("Default constructor");
+	}
+
+	public Constructor(int i)
+	{
+		this.i=i;
+	}
+	
+	public static void main(String[] args) {
+		
+		
+	}
+}

@@ -1,0 +1,11 @@
+package constructors;
+
+public class Constructor {
+	
+	int i;
+	
+	public Constructor(){
+		System.out.println("Default constructor");
+	}
+
+}

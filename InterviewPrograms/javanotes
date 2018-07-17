@@ -1,0 +1,26 @@
+java having 8 primitive datatypes
+byte  --1 byte --0
+short --2 byte --0
+int   --4 byte --0
+long  --8 byte --0
+char  --2 byte --'\u000'
+float --4 byte --0.0f
+double--8 byte --0.0d
+
+boolean--not defined -- false
+
+String --not defined --null
+
+-----Wrapper classes---------
+
+1.Wrapper classes is nothing but converting the primitive datatypes to object
+2. Primitive datatypes does not belong to any class, so collections will support only Objects instead of primitive data types. 
+3. All the wrapper classes present under  Object class (Boolean, Number and Charecter are the wrapper classes).
+4. All the number related classes are the subclasses of Abstract class called Number.
+
+
+String class
+
+
+
+

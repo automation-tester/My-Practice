@@ -1,0 +1,22 @@
+package constructors;
+
+public class Constructor {
+	
+	int i;
+	
+	public Constructor(){
+		//this(20);
+		System.out.println("Default constructor");
+	}
+
+	public Constructor(int i)
+	{
+		this.i=i;
+		System.out.println("Parametereed constructor");
+	}
+	
+	public static void main(String[] args) {
+		
+		Constructor c=new Constructor(20);
+	}
+}

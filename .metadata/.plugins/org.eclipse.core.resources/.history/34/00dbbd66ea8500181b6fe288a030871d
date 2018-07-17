@@ -1,0 +1,9 @@
+package inheritence;
+
+public interface First {
+
+	void method1();
+	
+	void method2();
+	
+}

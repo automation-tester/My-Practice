@@ -1,0 +1,125 @@
+1. Cucumber is a open source testing tool which supports Behaviour driver development, which is used to write acceptance tests for web application
+2. Cucumber defines the behaviour of the application in using simple plain text(feature file)
+
+What is BDD?
+>>Writing the acceptance scenarios in the developing stage itself is known as behaviour driven development
+>>Cucumber gives us an opportunity develop the test scripts which covers both developer and customer prospective scenarios
+
+How BDD will work?
+Write/Describe the scenarios  >>> write the step definations >>> Execute the script if fails >>> modify script >>> run and pass
+
+Advantages of cucumber?
+>> it supports multiple languages like Ruby, .net and java
+>> No need of more coding knowledge as it is written in the plain text
+>> It will setup a bridge between customer and the testscripts
+>> It covers end to end testing scenario's
+>> Code re-usability is more
+
+Pre requisits?
+
+1. java
+2. Eclipse/Intellij
+3. Maven
+4. Selenium
+5. Cucumber java
+6. Cucumber junit
+7. Juint 
+
+Gherkin?
+
+1. We use the Gherkin language to write the feature files
+2. Gherkin is plain english text language in which feature files have been written, cucumber will executes this code using piece of code written in java or selenium.
+
+Why Gherkin language?
+As we know cucumber is behaviour driven development where we will write the scenarios in developer, product manager, customer and tester prospective, so everyone will not know same language.
+Hence we go for gherkin language instead of common language
+
+
+Gherkin keywords:
+
+Commonly used
+Feature: Name of the feature
+Scenario: test scenario
+Given: prerequisits 
+When: condition which should match to execute next step
+Then: what should happen if the step mentioned in the WHEN is executed
+And: and can be used with Given, When or Then for conjunction
+
+
+Background
+but
+*
+Scenario Outline
+Examples
+
+>> Steps written in the Feature files will parse with the step definations 
+
+
+Feature:
+1. Feature can be defined as functionality or stand alone unit of the project.
+2. Using features in prior to testing we can deside which features to test
+3. Features contains multiple scenarios to test the coplete feature
+4. 'Feature' is the keyword used to write the feature name
+
+Feature files:
+1. File in which all the cucumber tests are written is called feature file.
+2. Feature file should be written with .feature extension
+3. For the better structure, it is better to write separate feature file for each feature
+
+
+Step definations:
+1. Cucumber does not know which pieace of code need to execute exactly, so we need to write the pieace of code for each each step that that is called step defination
+2. Step defination is a piece of code which maps with the step in the feature file
+3. Step defination can be written with the combination of java/selenium or both java and selenium
+
+Scenario:
+1. Sceanrio is the test scenario which will contains multiple steps
+2. Feature can have multiple scenarios
+3. Scenarios will written using 'Scenario' key word
+
+Scenario Outline:
+1. If we need to run the same scenario multiple times with different inputs we can copy paste the Scenario code those many times but it is not best practice, so we need to go for Scenario Outline
+2. Scenario Outline is the Gherkin keyword used to run the scenario in multiple iterations.
+3. We will define the inputs in '<>' 
+
+ 
+ Runner class:
+ @RunWith(Cucucmber.class)
+ @Cucumber.options(features="Feature", glue={"step defination"}, format={"pretty"
+ 
+ 
+ Scenario: checking that user can login without subscription
+ 
+ Given AU user logged in with username "andhsj" and password "jdhhf"
+ When user clicks on signin buton
+ Then user should be navigated to Login page and verifies the homepage title "Westlaw"
+ 
+ 
+ Scenario Outline: Checking the results for the search
+ 
+ Given When user login with "<Username>" and "<Password>"
+ When User enters the term "<searchterm>" in the homepage
+ And Clicks on Search button
+ Then User must seen Number of results "<number>" in the search result page
+
+ Examples:
+ | Username | Password | Searchterm | number |
+ 
+ 
+ 
+ Datatable:
+ Given Au user login with following details
+ |usrname| hfgghh|
+ 
+ 
+ Datatables data as method argument
+ 
+ use raw method to cretae table instance ie 
+ public void userdata(DataTable userdatails)
+ {
+ 
+ List<String> data=userdetails.raw();
+ data.get(row).get(coloumn);
+ 
+ 
+

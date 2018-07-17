@@ -1,0 +1,18 @@
+package inheritence;
+
+public class ClassB {
+	
+  public void test(){
+		
+		System.out.println("Sub class common method");
+	}
+	
+	public void add(){
+		System.out.println("Sub class separate method");
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

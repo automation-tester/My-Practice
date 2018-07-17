@@ -1,0 +1,41 @@
+package javabasics;
+
+public class MyWork {
+	//class cannot have private or protected modifier
+	
+	
+	public int j;
+	public String s;
+	
+	
+	//constructor without parameters
+	/*public MyClass(){
+		
+		//constuctor with no parameters will print the default values to the instance variables
+	}*/
+
+	public MyWork() {
+		System.out.println("Default constructor");
+	}
+	
+	
+	public MyWork(int j){
+		System.out.println("parameterized constructor");
+		this.j=j;
+	}
+	
+	public static void main(String[] args) {
+		
+	//  Type    variable= new constructor
+		//--new will reserve memory for this object in statck
+		MyWork obj=new MyWork();
+		obj.test();
+		System.out.println(obj.j);
+		System.out.println(obj.s);
+	}
+	
+	
+	
+}
+
+

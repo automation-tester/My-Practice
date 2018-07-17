@@ -1,0 +1,16 @@
+1. Cucumber is a open source testing tool which supports Behaviour driver development
+2. Cucumber defines the behaviour of the application in using simple plain text(feature file)
+
+What is BDD?
+>>Writing the acceptance scenarios in the developing stage itself is known as behaviour driven development
+>>Cucumber gives us an opportunity develop the test scripts which covers both developer and customer prospective scenarios
+
+How BDD will work?
+Write/Describe the scenarios  >>> write the step definations >>> Execute the script if fails >>> modify script >>> run and pass
+
+Advantages of cucumber?
+>> it supports multiple languages like Ruby, .net and java
+>> No need of more coding knowledge as it is written in the plain text
+>> It will setup a bridge between customer and the testscripts
+>> It covers end to end testing scenario's
+>> Code re-usability is more

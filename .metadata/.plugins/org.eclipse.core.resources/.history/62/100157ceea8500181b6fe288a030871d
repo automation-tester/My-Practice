@@ -1,0 +1,22 @@
+package inheritence;
+
+public class ClassImpl implements First {
+	
+	public static void main(String[] args) {
+		
+		
+	}
+
+	@Override
+	public void method1() {
+		System.out.println("Implemented method 1");
+	}
+
+	@Override
+	public void method2() {
+		
+	}
+	
+	
+
+}

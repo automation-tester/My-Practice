@@ -1,0 +1,29 @@
+package programsaskedininterview;
+
+public enum Month {
+	
+	/* 1. enum in java implemented after 1.0 version on the basis of class
+	   2. If we want to represent a group of constants then we shuold go for enum
+	   3. To create our own data types we go for enum
+	   4. Return type of enum is name of the enum
+	   5. We need to separate the constants with ','
+	   6. There is no rules that we should use ; or not
+	   7. all the enum constants are public static and final by default
+	*/
+	
+	Jan 		// it is equals to public static final Month Jan=new Month();
+	,Feb		// it is equals to public static final Month Feb=new Month();
+	,March		// it is equals to public static final Month March=new Month();
+	,April
+	,May
+	,June
+	,July
+	,Aug
+	,Sep
+	,Oct
+	,Nov
+	,Dec;
+	
+	
+
+}

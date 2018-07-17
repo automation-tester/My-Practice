@@ -1,0 +1,249 @@
+package programsaskedininterview;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
+public class ArrayPrograms {
+	
+	
+////////////////////////////////////////////sorting the array contains 0's and 1's////////////////////////////////////////////////////////////
+	public static void arrayToSortOsAnd1s(){
+		
+		//sort the given array {0,0,1,0,1,0,0,1,1} into {0,0,0,0,0,1,1,1,1}
+		
+		int[] array={0,0,1,0,1,0,0,1,1};
+		System.out.println("Array Before sorting "+array);
+		
+		int length=array.length;
+		
+		supportProgram(array, length);
+		for(int i=0;i<length;i++)
+		{
+		System.out.print(array[i]+" ");
+		}
+	}
+	
+	
+	public static void supportProgram(int array[], int inilength){
+		
+		int count=0;
+		
+		//if array index equals to 0 then increase the count
+		for(int i=0;i<inilength;i++)
+		{
+			if(array[i]==0)
+			{
+				count++;
+			}
+		}
+		
+		//add 0's into the array until the size count
+		for(int j=0;j<count;j++){
+			array[j]=0;
+		}
+		
+		//add 1's into the array after 0's count size
+		for(int k=count;k<inilength;k++)
+		{
+			array[k]=1;
+		}
+		
+	}	
+/////////////////////////////////////////////////////Array sorting contains 0's and 1's completed////////////////////////////////////////////////////////////////////////////
+	
+	
+///////////////////////////////////////	Array sorting with any numbers //////////////////////////////////////////////////////////////////////
+	
+	public static void sortArrayElements(){
+		System.out.println("Bubble sort");										
+		int[] array={15,25,35,56,54,84};			 
+		int temp;									  
+		
+		//start from the 1st location
+		for(int i=0;i<array.length;i++)   // 0 to 5
+		{
+			//compare first element with all the elements till the 1 less than last element
+			for(int j=0;j<array.length-1;j++)    // 0 to 4
+			{
+				//if  num at j less than numbers at i then using third variable swap the numbers (so I th element will be large number than j then output will be decending order
+				if(array[j]<array[i]) // out put for this is 84 56 54 etc  
+				{					  // if we are using array[j] > array[i]
+					temp=array[i];
+					array[i]=array[j];
+					array[j]=temp;
+				}
+			}
+		}
+		for(int i=0;i<array.length;i++)
+		{
+			System.out.print(array[i]+" ");
+		}	
+	}
+	
+/////////////////////////////////////////////////////bubble sort ended/////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////Maximum number in an array /////////////////////////////////////////////////////////////////////
+	
+	
+	public static void maxNumbInArray(){
+		System.out.println("Highest number");
+		int[] array={20, 30, 56, 48, 65, 44, 235};
+		
+		//take first number
+		int max=array[0];
+		
+		for(int i=1;i<array.length;i++)
+		{
+			//compare if 1st number with 0th number 
+			if(array[i]>max)  //for minimum number array[i] < max
+			{
+				max=array[i];
+			}
+		}
+		System.out.println(" The largest number is "+max);
+	}
+	
+/////////////////////////////////////////////////maximum number ended////////////////////////////////////////////////////////////////////	
+
+//////////////////////////////////////////////Duplicate Elements in array ////////////////////////////////////////////////////////////////
+
+////way 1--------------------- using for loops
+	
+	public static void findDuplicateElementsinArray(){
+		System.out.println("Duplicate elemts using for loop");
+		
+		String[] list={"java","javascript","jdbc","java","sql"};
+		int count=0;
+		for(int i=0;i<list.length;i++)  //start from 0 to total length
+		{ 
+			for(int j=i+1;j<list.length;j++) // start from the i+1th for loop, we can't use only j=i+1  because some times i==j like when i=1 then j also 1
+			{
+			if(list[i].equals(list[j]))  //check if i th element with jth element
+				{
+				System.out.println("Duplicate element is "+list[j]); //print duplicated element
+				count++; //Increase the count to findout the number of duplicate elements
+				}
+			}
+		}
+		System.out.println("Number of duplicate elements are "+count);
+	}
+	
+//way 2------------------------ using hashSet
+	
+	public static void duplicateElementsByHashSet(){
+		System.out.println("Duplicate elements using hashset");
+		int count=0;
+		String array[]={"01","java","02","sql","01","sql"};
+		
+		Set<String> temp=new HashSet<String>();
+		
+		for (String string : array) {
+			
+			if(temp.add(string)==false)
+			{
+				System.out.println("the duplicate element is "+string);
+				count++;
+			}	
+		}
+		System.out.println("Number of duplicate elements "+count);	
+	}
+	
+	
+//////////////////////////////////////////////Duplicate elements ended ////////////////////////////////////////////////////////////////////
+	
+////////////////////////////////////////Second largest element in array //////////////////////////////////////////////////////////////////
+	
+	public static void secondLargestInArray(){
+		
+		int[] array={24,62,48,59,25,125,142};
+		int firstLargest = 0, secondLargest=0;
+		
+		//Findout highest and smallest element in first two numbers
+		if(array[0]>array[1])
+		{
+			firstLargest=array[0];
+			secondLargest=array[1];
+		}
+		else
+		{
+			secondLargest=array[0];
+			firstLargest=array[1];
+		}
+		
+		//start from second number 
+		for (int i = 2; i < array.length; i++) {
+			
+			//compare if numbers from the loop greater than first one
+			if(array[i]>firstLargest)
+			{
+			secondLargest=firstLargest;
+			firstLargest=array[i];
+			}
+			//compare if numbers from the loop greater thank second and less than first
+			else if(array[i]<firstLargest && array[i]>secondLargest)
+			{
+			secondLargest=array[i];
+			}
+		}
+		System.out.println("Second largest number is "+secondLargest);
+	}
+	
+/////////////////////////////Second largest completed///////////////////////////////////////////////////////////////////////////////////////	
+	
+/////////////////////////////////finding each element count in Array using map/////////////////////////////////////////////////////////////////////
+	
+	public static void eachElementCountInArrayUsingMap(){
+		int[] intArray = {1,4,2,3,5,4,4,7,5,4,3,6,8,6,4};
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+         
+        for(int x : intArray){
+            if(map.containsKey(x)){
+                int newCount = map.get(x) + 1;
+                map.remove(x);
+                map.put(x, newCount);
+            }
+            else{
+                map.put(x, 1); 
+            }            
+        }
+         
+        for(Map.Entry<Integer, Integer> e : map.entrySet()){            
+            System.out.println("Integer: " + e.getKey() + ", Occurences: " + e.getValue());
+        }	
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+		System.out.println("0's and 1's");
+		arrayToSortOsAnd1s();
+		
+		System.out.println("bubble sort");
+		sortArrayElements();
+		
+		System.out.println("Maximum number");
+		maxNumbInArray();
+		
+		System.out.println("Duplicate elements using for loop");
+		findDuplicateElementsinArray();
+		
+		System.out.println("Duplicate elements using hash set");
+		duplicateElementsByHashSet();
+		
+		System.out.println("Second largest element");
+		secondLargestInArray();
+		
+		System.out.println("Count of each element in an array");
+		eachElementCountInArrayUsingMap();
+	}
+	
+	
+	
+}

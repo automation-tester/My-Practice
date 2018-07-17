@@ -1,0 +1,162 @@
+package seleniumprograms;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.LogManager;
+
+import org.apache.log4j.Logger;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import pageObjects.LoginPage;
+
+public class BaseClass {
+	
+	public static Logger log=Logger.getLogger(BaseClass.class);
+	
+	public static WebDriver driver;
+	
+	public String readVariablesFromConfigPropertiesFile(String propertyname) throws IOException{
+		//Open the properties file using FileInputStream class
+		FileInputStream file=new FileInputStream("./propertyfiles//config.properties");
+		
+		//Create the object of properties class
+		Properties pr=new Properties();
+		
+		//load the property file
+		pr.load(file);
+		
+		//read the property name using getProperty method
+		return pr.getProperty(propertyname);
+		
+	}
+	
+	
+	
+	/*@BeforeMethod
+	@Parameters("browser")
+	public void launchBrowser(@Optional String browser)
+	{
+		if(browser.equals("chrome"))
+		{
+		System.setProperty("webdriver.chrome.driver", "./chromedriver.exe");
+		driver=new ChromeDriver();
+		log.info("Launched chrome browser");
+		}
+		else if(browser.equals("FF"))
+		{
+			driver=new FirefoxDriver();
+			log.info("Launched firefox browser");
+		}
+	}*/
+	
+	@AfterMethod
+	public void closeBrowser()
+	{
+		driver.quit();
+		
+	}
+	
+	
+	//resize window
+	@Test(groups={"practice"})
+	public void resizeWindow(){
+				
+		//get the size in X and Y coordinates
+		Dimension size=driver.manage().window().getSize();
+		System.out.println("Actual ize of the window is "+size);
+		
+		//or
+		
+		//get height and width using getsize().getheight() and getWidth() methods
+		System.out.println("Hight of window is "+driver.manage().window().getSize().getHeight());
+		
+		System.out.println("Width of window is "+driver.manage().window().getSize().getWidth());
+		
+		//Resize thw window using setSize method and pass the Dimention object with x and y coordinates
+		driver.manage().window().setSize(new Dimension(200, 200));	
+		
+		//maximize the window
+		driver.manage().window().maximize();
+		
+		//this is equals to
+		
+		/*Options man=driver.manage();
+		org.openqa.selenium.WebDriver.Window win=man.window();
+		win.maximize();*/
+		
+		
+	}
+	
+	
+	@Test(groups={"practice"})
+	public void navigateMethods(){
+		driver.navigate().to("http://www.gmail.com");
+		
+		driver.manage().window().maximize();
+		
+		driver.navigate().forward();
+		
+		driver.navigate().back();
+		
+		driver.navigate().refresh();
+		
+		log.info("Title of the page is "+driver.getTitle());
+		
+		log.info("Current url is "+driver.getCurrentUrl());
+		
+		log.info("page source is "+driver.getPageSource());
+	}
+	
+	
+	@Test(groups={"testing"})
+	public void readConfigFile() throws IOException{
+		
+		driver.manage().window().maximize();
+		
+		driver.get(readVariablesFromConfigPropertiesFile("url"));
+		
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		
+		LoginPage l1=new LoginPage(driver);
+		l1.usernameTextBox.sendKeys(readVariablesFromConfigPropertiesFile("username"));
+		log.info("entered usernsme");
+		
+		l1.passwordTextBox.sendKeys(readVariablesFromConfigPropertiesFile("password"));
+		log.info("entered password");
+		
+		l1.signInButton.click();
+		log.info("Clicked on signin button");
+	}
+	
+	// to solve elementNotVisibleException:
+	 //if the element is no visible then x and y coordinates will be 0 , 0 for that element to get locations we need to use getLocation().getx()  method
+	
+	//ElementNotSelectableException if it is disabled not clickable or selectable
+	//NoSuchElement 
+	//NoSuchFrame
+	//NoSuchWindow
+	//StaleElement
+	//SessionNotFound
+	//TimeoutException
+	//WebDriverException
+	//NoAlertPresent
+	//InvalidSelector
+	
+	//how to print the exception:
+	//1. printStacktrace()
+	//2. toString()
+	//3. getMessage()
+	
+}

@@ -1,0 +1,35 @@
+package inheritence;
+
+public class ClassImpl extends PartialClass implements First  {
+	
+	public ClassImpl(String ak, String s2) {
+		super(ak, s2);
+		System.out.println(ak+" "+s2);
+	}
+
+	public static void main(String[] args) {
+		
+		ClassImpl c=new ClassImpl("Selenium","java");
+		c.method1();
+	}
+
+	@Override
+	public void method1() {
+		System.out.println("Implemented method 1");
+	}
+
+	@Override
+	public void method2() {
+		System.out.println("implemented method 2");
+		
+	}
+
+	@Override
+	void main() {
+		System.out.println("Abstrct class method");
+		
+	}
+	
+	
+
+}

@@ -1,0 +1,21 @@
+package basics;
+
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+import io.appium.java_client.remote.MobileCapabilityType;
+
+public class AppiumBase {
+	
+	public static void main(String[] args) {
+		
+		DesiredCapabilities cap=new DesiredCapabilities();
+		cap.setCapability(MobileCapabilityType.AUTOMATION_NAME, "appium");
+		
+		cap.setCapability(MobileCapabilityType.PLATFORM_NAME, "Andriod");//Note this capability is need not to give in the latest versions of appium
+		
+		cap.setCapability(MobileCapabilityType.DEVICE_NAME, "Galaxy_Nexus_API_22");
+		
+		
+	}
+
+}

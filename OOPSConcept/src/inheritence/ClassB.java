@@ -1,0 +1,37 @@
+package inheritence;
+
+public class ClassB extends ClassA{
+	
+  public void test(){
+		
+		System.out.println("Sub class common method");
+	}
+	
+	public void sub(){
+		System.out.println("Sub class separate method");
+	}
+	
+	public static void main(String[] args) {
+		//upcasting, then only super class methods will work, if subclass and super class have same method then subclass method will work
+		ClassA obj=new ClassB();
+		obj.test();
+		obj.add();
+		
+		ClassA obj1=(ClassA) new ClassB();
+		obj1.test();
+		obj1.add();
+		
+		//if we create subclass object then both the methods will be accesible
+		ClassB obj2=new ClassB();
+		obj2.test();
+		obj2.add();
+		obj2.sub();
+		
+		// if we create obj of super class then only super class method will work even if there is same method names
+		ClassA obj3=new ClassA();
+		obj3.test();
+		obj3.add();
+		
+	}
+
+}

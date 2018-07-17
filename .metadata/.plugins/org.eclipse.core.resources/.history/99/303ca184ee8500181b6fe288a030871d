@@ -1,0 +1,12 @@
+package encapsulation;
+
+public class ClassB extends ClassEncapsulation{
+
+	public static void main(String[] args) {
+		
+		
+	}
+	
+	
+	
+}
